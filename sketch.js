@@ -1,6 +1,7 @@
 let hearts = [];
 let particles = [];
 let heartPoints = [];
+let counter = 0
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -42,7 +43,7 @@ function draw() {
   noStroke();
   textSize(30);
   text("Te amo demasiado\n\nL & M", width / 2, height / 2);
-
+  text(counter, width/2, height / 3 - 170)
   for (let i = particles.length - 1; i >= 0; i--) {
     let p = particles[i];
     p.update();
@@ -73,6 +74,7 @@ function draw() {
 }
 
 function mouseClicked() {
+  counter++
   for (let i = 0; i < 5; i++) {
     hearts.push({
       x: mouseX,
